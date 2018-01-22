@@ -24,10 +24,13 @@ import java.sql.RowId;
 import java.sql.SQLException;
 import java.sql.SQLWarning;
 import java.sql.SQLXML;
+import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Calendar;
+import java.util.Map;
 import koneksi.ConnectDB;
+import model.Nasabah;
 import model.Tabungan;
 
 /**
@@ -53,5 +56,17 @@ public class TabunganDAO {
          connection.commit();
          connection.close();
          System.out.println("Tabungan berhasil ditambahkan");
+     }
+     
+     public Tabungan getTabunganById(int id) throws SQLException{
+         Nasabah tempnas;
+         Statement statement = connection.createStatement();
+         ResultSet result = statement.executeQuery("select * from mst_tabungan where id_tabungan="+id);
+         if(result.next()){
+             Tabungan tabungan = new Tabungan(result.getInt(1),result.getString(2),result.getBigDecimal(3),result.getObject(4,getClass()));
+             return tabungan;
+         }else{
+             return null;
+         }
      }
 }

@@ -18,7 +18,8 @@ public class Tabungan {
     private String namaTabungan;
     private BigDecimal saldo;
     private Nasabah nasabah;
-    private List<Tabungan> listTabungan = new ArrayList<>();
+    private TransaksiTabungan transaksitabungan;
+    private List<TransaksiTabungan> listTransaksi = new ArrayList<>();
 
     public Tabungan(Integer idTabungan, String namaTabungan, BigDecimal saldo, Nasabah nasabah) {
         this.idTabungan = idTabungan;
@@ -59,11 +60,11 @@ public class Tabungan {
         this.nasabah = nasabah;
     }
 
-    public List<Tabungan> getListTabungan() {
-        return listTabungan;
+    public List<TransaksiTabungan> getListTabungan() {
+        return listTransaksi;
     }
 
-    public void addListTabungan(Tabungan tabungan) {
-        listTabungan.add(tabungan);
+    public void addListTransaksiTabungan(TransaksiTabungan trantab) {
+        listTransaksi.add(trantab);
     }
 }

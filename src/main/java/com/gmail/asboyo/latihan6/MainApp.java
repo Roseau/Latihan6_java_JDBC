@@ -34,12 +34,13 @@ public class MainApp {
 //        } catch (SQLException ex) {
 //            System.out.println(ex);
 //        }
-        BigDecimal b = new BigDecimal(500000);
-        try {
-            tdao.save(new Tabungan(null,"Tabungan Umroh",b,ndao.getNasabahByID(3)));
-        } catch (SQLException ex) {
-            System.out.println(ex);
-            ex.printStackTrace();
-        }
+//        BigDecimal b = new BigDecimal(500000);
+//        try {
+//            tdao.save(new Tabungan(null,"Tabungan Umroh",b,ndao.getNasabahByID(3)));
+//        } catch (SQLException ex) {
+//            System.out.println(ex);
+//            ex.printStackTrace();
+//        }
+          
     }
 }

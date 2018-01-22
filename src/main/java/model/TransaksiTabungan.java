@@ -14,12 +14,14 @@ import java.sql.Date;
  */
 public class TransaksiTabungan {
     private Integer idTransaksi;
+    private Tabungan tabungan;
     private Integer jenisTransaksi;
     private Date tanggalTransaksi;
     private BigDecimal saldo, debet, kredit;
 
-    public TransaksiTabungan(Integer idTransaksi, Integer jenisTransaksi, Date tanggalTransaksi, BigDecimal saldo, BigDecimal debet, BigDecimal kredit) {
+    public TransaksiTabungan(Integer idTransaksi, Tabungan tabungan, Integer jenisTransaksi, Date tanggalTransaksi, BigDecimal saldo, BigDecimal debet, BigDecimal kredit) {
         this.idTransaksi = idTransaksi;
+        this.tabungan = tabungan;
         this.jenisTransaksi = jenisTransaksi;
         this.tanggalTransaksi = tanggalTransaksi;
         this.saldo = saldo;
@@ -73,6 +75,14 @@ public class TransaksiTabungan {
 
     public void setKredit(BigDecimal kredit) {
         this.kredit = kredit;
+    }
+
+    public Tabungan getTabungan() {
+        return tabungan;
+    }
+
+    public void setTabungan(Tabungan tabungan) {
+        this.tabungan = tabungan;
     }
     
     
